@@ -1,5 +1,5 @@
 package com.deezer.demo.model;
 
-public class Cantor {
+public class Music {
     
 }
