@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.deezer.demo.model.Music;
-import com.deezer.demo.respository.MusicRespository;
+import com.deezer.demo.repository.MusicRespository;
 
 import lombok.NoArgsConstructor;
 

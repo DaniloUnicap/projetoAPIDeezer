@@ -1,4 +1,4 @@
-package com.deezer.demo.respository;
+package com.deezer.demo.repository;
 
 import org.springframework.stereotype.Repository;
 import com.deezer.demo.model.Artist;
