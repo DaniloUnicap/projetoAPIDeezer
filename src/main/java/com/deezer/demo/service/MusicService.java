@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.deezer.demo.exception.MusicNotFoundException;
 import com.deezer.demo.model.Music;
 import com.deezer.demo.repository.MusicRespository;
 
@@ -19,11 +20,11 @@ public class MusicService {
     public List<Music> getAll() {
         return musicRespository.findAll();
     }
-    public Music getMusicById (Long id) {
+    public Music getMusicById (Long id) throws MusicNotFoundException{
         Optional <Music> opMusic = musicRespository.findById(id);
 
         if(opMusic.isEmpty()){
-            return null;
+            throw new MusicNotFoundException("Music " + id + " not found");
         }
         Music music = opMusic.get();
         return music;
@@ -33,7 +34,7 @@ public class MusicService {
         musicRespository.save(music);
     }
 
-    public boolean deleteMusicById(Long id) {
+    public boolean deleteMusicById(Long id) throws MusicNotFoundException{
         Optional <Music> opMusic = musicRespository.findById(id);
 
         if (opMusic.isEmpty()){
@@ -45,11 +46,11 @@ public class MusicService {
         return true;
     }
 
-    public boolean updadeMusicById (Long id, String newName){
+    public boolean updadeMusicById (Long id, String newName) throws MusicNotFoundException{
         Optional <Music> opMusic = musicRespository.findById(id);
 
         if(opMusic.isEmpty()){
-            return false;
+            throw new MusicNotFoundException("Music " + id + " not found");
         }
 
         Music u = opMusic.get();
