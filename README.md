@@ -4,7 +4,7 @@ Este projeto é uma aplicação Java desenvolvida com Spring Boot que realiza re
 
 ## Tecnologias Utilizadas
 
-- **Java 17**: Linguagem de programação.
+- **Java **: Linguagem de programação.
 - **Spring Boot**: Framework para desenvolvimento da aplicação.
 - **RestTemplate**: Biblioteca para fazer chamadas HTTP.
 - **Maven**: Dependências e build.
